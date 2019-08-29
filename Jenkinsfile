@@ -1,10 +1,42 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Unit Tests') {
             steps {
-                sh 'echo "Hello world!"'
+                executeUnitTest()
+            }
+        }
+        stage('Package') {
+            steps {
+                executePackage()
+            }
+        }
+        stage('Deploy') {
+            steps {
+                executeDeploy()
+            }
+        }
+        stage('API Tests') {
+            steps {
+                executeAPITests()
             }
         }
     }
+
+}
+
+def executeUnitTest(){
+    echo "Hello, executeUnitTest."
+}
+
+def executePackage(){
+    echo "Hello, executePackage."
+}
+
+def executeDeploy(){
+    echo "Hello, executeDeploy."
+}
+
+def executeAPITests(){
+    echo "Hello, executeAPITests."
 }
