@@ -1,3 +1,5 @@
+//Test push to master from MacOS
+
 pipeline {
     agent any
     stages {
